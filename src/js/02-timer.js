@@ -27,7 +27,7 @@ const options = {
     const choisedDate = Date.parse(flatpickrInput.selectedDates[0]);
     const currentDate = Date.parse(options.defaultDate);
 
-    let difference = choisedDate - currentDate;
+    const difference = choisedDate - currentDate;
 
     if (difference < 0) {
       Notiflix.Notify.failure('Please choose a date in the future'); // fail choose
