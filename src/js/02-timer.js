@@ -11,9 +11,9 @@ const elements = {
   minutes: document.querySelector('[data-minutes]'),
   seconds: document.querySelector('[data-seconds]'),
 };
+let difference;
 
-let buttonStart;
-if (!buttonStart) {
+if (!difference) {
   elements.btnStart.setAttribute('disabled', 'disabled');
 }
 // liberry
@@ -27,7 +27,7 @@ const options = {
     const choisedDate = Date.parse(flatpickrInput.selectedDates[0]);
     const currentDate = Date.parse(options.defaultDate);
 
-    const difference = choisedDate - currentDate;
+    difference = choisedDate - currentDate;
 
     if (difference < 0) {
       Notiflix.Notify.failure('Please choose a date in the future'); // fail choose
